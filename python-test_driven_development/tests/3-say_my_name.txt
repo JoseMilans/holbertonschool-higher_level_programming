@@ -1,0 +1,30 @@
+# Importing the function
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+# Surname as int
+>>> say_my_name("Jose", 10) 
+Traceback (most recent call last):
+TypeError: last_name must be a string
+
+# Forename as int
+>>> say_my_name(10, "Milans")
+Traceback (most recent call last):
+TypeError: first_name must be a string
+
+# Both arguments provided correctly
+>>> say_my_name("Jose", "Milans")
+My name is Jose Milans
+
+# Only forename provided (should print first_name and a space)
+
+>>> say_my_name("Jose")
+My name is Jose 
+
+>>> say_my_name(23)
+Traceback (most recent call last):
+TypeError: first_name must be a string
+
+# No arguments
+>>> say_my_name()
+Traceback (most recent call last):
+TypeError: say_my_name() missing 1 required positional argument: 'first_name'
