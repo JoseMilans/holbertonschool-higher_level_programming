@@ -1,0 +1,57 @@
+Importing the function
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+# Check if not a list of lists
+>>> matrix_divided([1, 2, 3, 4], 2)
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+# Test matrix with uneven row sizes
+>>> matrix_divided([[1, 2], [1, 2, 3]])
+Traceback (most recent call last):
+TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+# Invalid argument types
+>>> matrix_divided((1, 2, 3, 4), 2)
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+# Test invalid matrix element type
+>>> matrix_divided([[1, 'two'], [3, 4]], 5)
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+# Invalid argument types
+>>> matrix_divided([[1, 2], [3, 4]], "five")
+Traceback (most recent call last):
+TypeError: div must be a number
+
+# Test invalid divisor
+>>> matrix_divided([[1, 2], [1, 2]], '3')
+Traceback (most recent call last):
+TypeError: div must be a number
+
+>>> matrix_divided(None, 2)
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+# Test division by zero
+>>> matrix_divided([[1, 2], [1, 2]], 0)
+Traceback (most recent call last):
+ZeroDivisionError: division by zero
+
+# TypeErrors due to incorrect argument types
+>>> matrix_divided()
+Traceback (most recent call last):
+TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
+
+# Edge cases with inf and NaN
+>>> matrix_divided([[1, 2], [3, 4]], float('inf'))
+[[0.0, 0.0], [0.0, 0.0]]
+
+>>> matrix_divided([[1, 2], [3, 4]], float('NaN'))
+[[nan, nan], [nan, nan]]
+
+# 2 decimal places
+>>> matrix_divided([[1, 2], [3, 4]], 5.6)
+[[0.18, 0.36], [0.54, 0.71]]
