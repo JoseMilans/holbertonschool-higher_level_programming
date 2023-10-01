@@ -1,0 +1,79 @@
+Importing the function:
+>>> add_integer = __import__('0-add_integer').add_integer
+
+Test with two integers:
+>>> print(add_integer(1, 1))
+2
+
+Testing with negative integers:
+>>> print(add_integer(100, -2))
+98
+
+>>> print(add_integer(-5, -12))
+-17
+
+Test with only default parameter:
+>>> print(add_integer(2))
+100
+
+Testing with different numbers of arguments:
+>>> print(add_integer(3, 8, 9))
+Traceback (most recent call last):
+...
+TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
+
+Testing with floats:
+>>> print(add_integer(5.5, 5.5))
+10
+>>> print(add_integer(5, 5.5))
+10
+>>> print(add_integer(5.5, 5))
+10
+
+Test with empty list:
+>>> print(add_integer())
+Traceback (most recent call last):
+...
+TypeError: add_integer() missing 1 required positional argument: 'a'
+
+Testing with different data types, edge cases and invalid/special inputs/values
+>>> print(add_integer(a, 25))
+Traceback (most recent call last):
+...
+NameError: name 'a' is not defined
+
+>>> print(type(add_integer(2, 3)))  # Check return type
+<class 'int'>
+
+>>> print(add_integer("ok", 4))  # Str and int
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+	
+>>> print(add_integer(1, [87, 13, 88])) # Int and list input
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+
+>>> print(add_integer(None))  # None as 'a' parameter
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+>>> print(add_integer(float("inf")))  # Infinity value
+Traceback (most recent call last):
+...
+OverflowError: cannot convert float infinity to integer
+
+>>> print(add_integer(4, 3e888)) # Int and inf value
+Traceback (most recent call last):
+...
+OverflowError: cannot convert float infinity to integer
+
+>>> print(add_integer(8e10, 3))  # Very large value
+80000000003
+
+>>> print(add_integer(float("NaN")))  # NaN value
+Traceback (most recent call last):
+...
+ValueError: cannot convert float NaN to integer
