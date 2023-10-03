@@ -1,9 +1,10 @@
 #!/usr/bin/python3
 """Module to define a rectangle."""
 
+
 class Rectangle:
     """A class that defines a rectangle."""
-    
+
     def __init__(self, width=0, height=0):
         """Initialises rectangle."""
         self.height = height
@@ -53,7 +54,7 @@ class Rectangle:
             return ""
         rows = ['#' * self.width for _ in range(self.height)]
         return '\n'.join(rows)
-    
+
     def __repr__(self):
         """Return a string that can recreate the rectangle using eval()."""
         return "Rectangle({}, {})".format(self.width, self.height)
