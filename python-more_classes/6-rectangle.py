@@ -5,14 +5,17 @@
 class Rectangle:
     """A class that defines a rectangle."""
 
+    number_of_instances = 0
+
     def __init__(self, width=0, height=0):
         """Initialises rectangle."""
-        self.height = height
         self.width = width
+        self.height = height
+        type(self).number_of_instances += 1
 
     @property
     def width(self):
-        """Return rectangle width."""
+        """Get rectangle width."""
         return self.__width
 
     @width.setter
@@ -26,7 +29,7 @@ class Rectangle:
 
     @property
     def height(self):
-        """Return rectangle height."""
+        """Get rectangle height."""
         return self.__height
 
     @height.setter
@@ -49,16 +52,16 @@ class Rectangle:
         return 2 * (self.height + self.width)
 
     def __str__(self):
-        """Return a string representation of the rectangle using '#'."""
+        """Print the rectangle with '#'."""
         if self.height == 0 or self.width == 0:
             return ""
-        rows = ['#' * self.width for _ in range(self.height)]
-        return '\n'.join(rows)
+        return '\n'.join(['#' * self.width for _ in range(self.height)])
 
     def __repr__(self):
-        """Return a string that can recreate the rectangle using eval()."""
+        """Return a string that can recreate the rectangle."""
         return "Rectangle({}, {})".format(self.width, self.height)
 
     def __del__(self):
         """Print a message when an instance is deleted."""
         print("Bye rectangle...")
+        type(self).number_of_instances -= 1
