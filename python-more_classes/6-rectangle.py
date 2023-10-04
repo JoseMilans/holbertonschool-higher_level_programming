@@ -29,12 +29,12 @@ class Rectangle:
 
     @property
     def height(self):
-        """Get rectangle height."""
+        """Get the height."""
         return self.__height
 
     @height.setter
     def height(self, value):
-        """Set rectangle height."""
+        """Set the height."""
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if value < 0:
