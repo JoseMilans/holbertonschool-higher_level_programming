@@ -1,0 +1,30 @@
+Importing the class from the module::
+    >>> MyList = __import__('1-my_list').MyList
+
+    >>> my_list = MyList()
+
+	>>> print(isinstance(my_list, list))
+	True
+
+	>>> my_list.print_sorted()
+	[]
+
+    >>> my_list.append(10)
+    >>> my_list.append(20)
+    >>> my_list.append(15)
+    >>> my_list.append(5)
+    >>> my_list.append(25)
+
+    >>> print(my_list)
+    [10, 20, 15, 5, 25]
+
+    >>> my_list.append(-5)
+    >>> my_list.print_sorted()
+    [-5, 5, 10, 15, 20, 25]
+
+    >>> print(str(my_list))
+    [10, 20, 15, 5, 25, -5]
+
+    >>> print(repr(my_list))
+    [10, 20, 15, 5, 25, -5]
+	
