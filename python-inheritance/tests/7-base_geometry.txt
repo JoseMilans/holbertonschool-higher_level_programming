@@ -1,0 +1,53 @@
+Importing the class from the module:
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+>>> bg = BaseGeometry()
+
+>>> bg.integer_validator("singleArg")
+Traceback (most recent call last):
+TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+>>> bg.integer_validator("tupleInput", (7, 8))
+Traceback (most recent call last):
+TypeError: tupleInput must be an integer
+
+>>> bg.integer_validator("nanValue", float('NaN'))
+Traceback (most recent call last):
+TypeError: nanValue must be an integer
+
+>>> bg.integer_validator("infValue", float('inf'))
+Traceback (most recent call last):
+TypeError: infValue must be an integer
+
+>>> bg.integer_validator("booleanInput", True)
+Traceback (most recent call last):
+TypeError: booleanInput must be an integer
+
+>>> bg.integer_validator("stringInput", "tito")
+Traceback (most recent call last):
+TypeError: stringInput must be an integer
+
+>>> bg.integer_validator("zeroInput", 0)
+Traceback (most recent call last):
+ValueError: zeroInput must be greater than 0
+
+>>> bg.integer_validator("integerInput", 10)
+
+>>> bg.integer_validator("negativeInt", -9)
+Traceback (most recent call last):
+ValueError: negativeInt must be greater than 0
+
+>>> bg.integer_validator("listInput", [5, 7])
+Traceback (most recent call last):
+TypeError: listInput must be an integer
+
+>>> bg.integer_validator("noneInput", None)
+Traceback (most recent call last):
+TypeError: noneInput must be an integer
+
+>>> bg.integer_validator("floatValue", 4.76)
+Traceback (most recent call last):
+TypeError: floatValue must be an integer
+
+>>> bg.integer_validator("negativeFloat", -2.22)
+Traceback (most recent call last):
+TypeError: negativeFloat must be an integer
