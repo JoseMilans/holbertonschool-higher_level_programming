@@ -3,13 +3,14 @@
 
 from models.rectangle import Rectangle
 
+
 class Square(Rectangle):
     """Square class inherits from Rectangle."""
-    
+
     def __init__(self, size, x=0, y=0, id=None):
         """
         Constructor method for Square class.
-        
+
         Args:
             size (int)
             x (int)
