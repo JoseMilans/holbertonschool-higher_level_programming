@@ -71,10 +71,12 @@ class Base:
         """
         Create an instance with all attributes already set using a dictionary.
         """
-        if cls != Base:
+        if cls.__name__ == "Rectangle":
             dum_obj = cls(1, 1)
-            dum_obj.update(**dictionary)
-            return dum_obj
+        elif cls.__name__ == "Square":
+            dum_obj = cls(1)
+        dum_obj.update(**dictionary)
+        return dum_obj
 
     @classmethod
     def load_from_file(cls):
