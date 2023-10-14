@@ -32,7 +32,7 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
-    
+
     @staticmethod
     def to_json_string(list_dictionaries):
         """
@@ -49,7 +49,7 @@ class Base:
         """
         filename = f"{cls.__name__}.json"
         list_dicts = []
-        
+
         if list_objs:
             for obj in list_objs:
                 list_dicts.append(obj.to_dictionary())
