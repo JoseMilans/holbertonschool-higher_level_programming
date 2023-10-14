@@ -1,9 +1,13 @@
 #!/usr/bin/python3
-"""Unit tests for Base class"""
+
 import unittest
 import json
-Base = __import__('models.base').base.Base
 from models.rectangle import Rectangle
+Base = __import__('models.base').base.Base
+
+
+"""Unit tests for Base class"""
+
 
 class TestBase(unittest.TestCase):
 
