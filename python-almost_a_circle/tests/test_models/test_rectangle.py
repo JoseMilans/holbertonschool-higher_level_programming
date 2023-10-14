@@ -61,7 +61,8 @@ class TestRectangle(unittest.TestCase):
         rect = Rectangle(4, 3, 2, 2)
         with patch('sys.stdout', new=StringIO()) as fake_out:
             rect.display()
-            self.assertEqual(fake_out.getvalue(), "\n\n  ####\n  ####\n  ####\n")
+            self.assertEqual(fake_out.getvalue(),
+                             "\n\n  ####\n  ####\n  ####\n")
 
     def test_rect_update(self):
         rect = Rectangle(3, 3, 2, 2)
@@ -83,18 +84,21 @@ class TestRectangle(unittest.TestCase):
     def test_width_type_error_with_string(self):
         with self.assertRaises(TypeError) as exc:
             rect = Rectangle("RectangleStr", 2, 3, 4)
-            self.assertEqual(str(exc.exception), "width must be a valid integer")
+            self.assertEqual(str(exc.exception),
+                             "width must be a valid integer")
 
     def test_width_value_error_negative(self):
         with self.assertRaises(ValueError) as exc:
             rect = Rectangle(-6, 3, 3, 4)
-            self.assertEqual(str(exc.exception), "width must be greater than 0")
+            self.assertEqual(str(exc.exception),
+                             "width must be greater than 0")
 
     def test_height_value_error_negative(self):
         """Test ValueError for height with negative value."""
         with self.assertRaises(ValueError) as exc:
             rect = Rectangle(2, -6, 3, 4)
-            self.assertEqual(str(exc.exception), "height must be greater than 0")
+            self.assertEqual(str(exc.exception),
+                             "height must be greater than 0")
 
     def test_rectangle_to_dictionary(self):
         """Test conversion of Rectangle attributes to dictionary."""
