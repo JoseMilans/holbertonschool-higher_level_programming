@@ -1,4 +1,4 @@
---Display list of all shows with their genre ids if available
+-- Display list of all shows with their genre ids if available
 SELECT
     tv_shows.title,
     tv_show_genres.genre_id
