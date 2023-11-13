@@ -1,4 +1,5 @@
 -- Display a list of all genres for a given show
+
 SELECT 
     tv_genres.name
 FROM 
