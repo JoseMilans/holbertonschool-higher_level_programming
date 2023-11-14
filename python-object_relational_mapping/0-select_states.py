@@ -13,7 +13,7 @@ def list_states(mysql_usr, mysql_pw, db_name):
     Connects to the MySQL database and prints all states in
     ascending order by id
     """
-    db = MySQLdb.connect(host='host.docker.internal', user=mysql_usr,
+    db = MySQLdb.connect(host='localhost', user=mysql_usr,
                          passwd=mysql_pw, db=db_name)
     try:
         with db.cursor() as cursor:
