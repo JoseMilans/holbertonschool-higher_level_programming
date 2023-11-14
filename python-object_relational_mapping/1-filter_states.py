@@ -16,7 +16,7 @@ def list_states_n(mysql_usr, mysql_pw, db_name):
                          passwd=mysql_pw, db=db_name)
     try:
         with db.cursor() as cur:
-            cur.execute("SELECT * FROM states WHERE name LIKE 'N%' "
+            cur.execute("SELECT * FROM states WHERE name LIKE BINARY 'N%' "
                         "ORDER BY id ASC")
             for state in cur:
                 print(state)
