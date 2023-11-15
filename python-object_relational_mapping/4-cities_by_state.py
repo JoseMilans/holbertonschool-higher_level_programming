@@ -13,7 +13,7 @@ def list_cities(mysql_user, mysql_pw, db_name):
     Displays all cities from the database along with their state names
     sorted by city IDs
     """
-    db = MySQLdb.connect(host='host.docker.internal', port=3306,
+    db = MySQLdb.connect(host='localhost', port=3306,
                          user=mysql_user, passwd=mysql_pw, db=db_name)
     try:
         with db.cursor() as cur:
