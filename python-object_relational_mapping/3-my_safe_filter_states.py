@@ -13,7 +13,7 @@ def safe_filter_states(mysql_user, mysql_pw, db_name, state_name):
     Displays all values in the states table where name matches the argument
     and prevents SQL injection
     """
-    db = MySQLdb.connect(host='host.docker.internal', port=3306,
+    db = MySQLdb.connect(host='localhost', port=3306,
                          user=mysql_user, passwd=mysql_pw, db=db_name)
     try:
         with db.cursor() as cur:
