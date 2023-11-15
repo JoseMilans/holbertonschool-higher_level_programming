@@ -16,7 +16,8 @@ def filter_states_by_input(mysql_usr, mysql_pw, db_name, state_name):
                          passwd=mysql_pw, db=db_name)
     try:
         with db.cursor() as cur:
-            query = "SELECT * FROM states WHERE name = %s ORDER BY id ASC"
+            query = ("SELECT * FROM states WHERE BINARY name = %s "
+                     "ORDER BY id ASC")
             cur.execute(query, (state_name,))
             for state in cur:
                 print(state)
