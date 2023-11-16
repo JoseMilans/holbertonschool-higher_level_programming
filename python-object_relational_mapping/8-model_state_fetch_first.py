@@ -10,7 +10,7 @@ from sys import argv
 def print_first_state(mysql_usr, mysql_pw, db_name):
     """Prints the first State object from the database
     """
-    conn = f'mysql+mysqldb://{mysql_usr}:{mysql_pw}@host.docker.internal:3306/'
+    conn = f'mysql+mysqldb://{mysql_usr}:{mysql_pw}@localhost:3306/'
     engine = create_engine(conn + db_name)
     Session = sessionmaker(bind=engine)
     session = Session()
