@@ -9,7 +9,7 @@ from sys import argv
 
 
 def list_states_containing_a(mysql_usr, mysql_pw, db_name):
-    """List all states containing the letter 'a
+    """List all states containing the letter 'a'
     """
     conn = f'mysql+mysqldb://{mysql_usr}:{mysql_pw}@localhost:3306/'
     engine = create_engine(conn + db_name)

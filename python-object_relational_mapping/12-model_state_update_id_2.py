@@ -20,7 +20,7 @@ def update_state(mysql_usr, mysql_pw, db_name):
     if state_to_update:
         state_to_update.name = 'New Mexico'
         session.commit()
-
+        
     session.close()
 
 

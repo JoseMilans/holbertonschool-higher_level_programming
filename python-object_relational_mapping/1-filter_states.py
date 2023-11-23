@@ -12,7 +12,7 @@ def list_states_n(mysql_usr, mysql_pw, db_name):
     """
     Lists all states with a name starting with N from the database
     """
-    db = MySQLdb.connect(host='localhost', user=mysql_usr,
+    db = MySQLdb.connect(host='host.docker.internal', user=mysql_usr,
                          passwd=mysql_pw, db=db_name)
     try:
         with db.cursor() as cur:

@@ -12,7 +12,7 @@ def filter_states_by_input(mysql_usr, mysql_pw, db_name, state_name):
     """
     Displays all values in the states table where name matches the argument
     """
-    db = MySQLdb.connect(host='localhost', port=3306, user=mysql_usr,
+    db = MySQLdb.connect(host='host.docker.internal', port=3306, user=mysql_usr,
                          passwd=mysql_pw, db=db_name)
     try:
         with db.cursor() as cur:

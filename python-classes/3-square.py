@@ -5,7 +5,7 @@
 
 class Square:
     """The class is constructed with an optional size attribute which
-       is validated,and includes a method to compute the square area."""
+       is validated, and includes a method to compute the square area."""
     def __init__(self, size=0):
         """Initialises a square instance.
         Args:
